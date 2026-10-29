@@ -52,6 +52,17 @@ Differenze strutturali note, da quantificare e non da correggere:
 - Vibe-Trading esegue un portafoglio continuo; lo script riparte da zero a ogni fold (una commissione d'ingresso in più per posizione e per fold).
 - Vibe-Trading ribilancia solo quando cambia il peso obiettivo; lo script ricalcola i pesi tier a ogni barra.
 
+## Errata (29/10/2026, prima di qualsiasi risultato del walk-forward)
+
+Il comando della sezione 2 era incompleto: senza `--wf_filters` lo script esegue l'esperimento di default
+(config di maggio, finestra fino a oggi, `--asof` ignorato). La baseline di `PROMPT_RIPRESA.md` è a 4H
+(impronta BTC n=9000 = 1500 giorni × 6 barre). Comando corretto, unico ammesso:
+
+    python research/sweep_may_vs_fixed.py --wf_filters --wf_exits --tf 4h --asof 2026-10-01
+
+Default che restano: `--wf_train 12`, `--wf_test 6`, `--mom 30` (giorni → 180 barre 4H), `--slot_frac 0.095`,
+`--universe_n 14`, `--pool_size 40`, `--history 1500`. Nessun altro criterio cambia.
+
 ## 7. Cosa NON si farà
 
 - Nessuna modifica a `sweep_may_vs_fixed.py` né al motore di Vibe-Trading durante la calibrazione.
