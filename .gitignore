@@ -1,0 +1,32 @@
+# Segreti: mai in git
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.ppk
+config.json.local
+
+# Dati e risultati pesanti
+data/
+*.parquet
+*.duckdb
+*.sqlite
+*.db
+runs/
+logs/
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Editor e sistema
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
