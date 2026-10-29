@@ -1,0 +1,7 @@
+# Terminazioni di riga Linux (LF) ovunque: la VM GCP e i servizi girano su Linux.
+# File CRLF sulla VM hanno gia fatto fallire sed senza avvisi.
+* text=auto eol=lf
+*.bat text eol=crlf
+*.ps1 text eol=crlf
+*.png binary
+*.parquet binary
